@@ -6,14 +6,20 @@ const cj2gelf = require('../index')
 const argv = yargs
       .options({
         'gelfhost': {
-          describe: 'gelf host',
+          describe: 'GELF server host',
           demandOption: true,
           type: 'string'
+        },
+        'gelfport': {
+          describe: 'GELF server port',
+          default: 12201,
+          type: 'number'
         }
       }).argv
 
 const {
-  gelfhost
+  gelfhost,
+  gelfport
 } = argv
 
-cj2gelf(gelfhost)
+cj2gelf(gelfhost, gelfport)
