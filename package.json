@@ -1,0 +1,24 @@
+{
+  "name": "journal2gelf",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m31271n/journal2gelf.git"
+  },
+  "author": "m31271n",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m31271n/journal2gelf/issues"
+  },
+  "homepage": "https://github.com/m31271n/journal2gelf#readme",
+  "dependencies": {
+    "gelf-pro": "^1.1.0",
+    "is-json": "^2.0.1",
+    "yargs": "^7.0.2"
+  }
+}

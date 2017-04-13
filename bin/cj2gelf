@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const yargs = require('yargs')
+const cj2gelf = require('../index')
+
+const argv = yargs
+      .options({
+        'gelfhost': {
+          describe: 'gelf host',
+          demandOption: true,
+          type: 'string'
+        }
+      }).argv
+
+const {
+  gelfhost
+} = argv
+
+cj2gelf(gelfhost)
