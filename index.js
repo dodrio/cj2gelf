@@ -7,14 +7,14 @@ const gelf = require('gelf-pro')
 
 module.exports = executor
 
-function executor (gelfHost) {
+function executor (gelfHost, gelfPort) {
   const journal = spawn('journalctl', ['-o', 'json', '-f'])
 
   gelf.setConfig({
     adapterName: 'udp',
     adapterOptions: {
       host: gelfHost,
-      port: 12201
+      port: gelfPort
     }
   })
 
