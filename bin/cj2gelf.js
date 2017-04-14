@@ -31,6 +31,7 @@ udp4Client.send('', gelfport, gelfhost, function (err) {
     console.error(`Error: invalid GELF server address - ${gelfhost}:${gelfport}`)
     process.exit(1)
   } else {
+    console.log(`Forwarding journald log to ${gelfhost}:${gelfport}`)
     cj2gelf(gelfhost, gelfport)
   }
 })
