@@ -1,21 +1,24 @@
 {
-  "name": "journal2gelf",
+  "name": "cj2gelf",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "cj2gelf": "bin/cj2gelf.js"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/m31271n/journal2gelf.git"
+    "url": "git+https://github.com/m31271n/cj2gelf.git"
   },
   "author": "m31271n",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/m31271n/journal2gelf/issues"
+    "url": "https://github.com/m31271n/cj2gelf/issues"
   },
-  "homepage": "https://github.com/m31271n/journal2gelf#readme",
+  "homepage": "https://github.com/m31271n/cj2gelf#readme",
   "dependencies": {
     "gelf-pro": "^1.1.0",
     "is-json": "^2.0.1",
