@@ -2,6 +2,7 @@
 
 const yargs = require('yargs')
 const cj2gelf = require('../index')
+const dgram = require('dgram')
 
 const argv = yargs
       .options({
@@ -15,11 +16,21 @@ const argv = yargs
           default: 12201,
           type: 'number'
         }
-      }).argv
+      })
+      .version()
+      .argv
 
 const {
   gelfhost,
   gelfport
 } = argv
 
-cj2gelf(gelfhost, gelfport)
+const udp4Client = dgram.createSocket('udp4')
+udp4Client.send('', gelfport, gelfhost, function (err) {
+  if (err) {
+    console.error(`Error: invalid GELF server address - ${gelfhost}:${gelfport}`)
+    process.exit(1)
+  } else {
+    cj2gelf(gelfhost, gelfport)
+  }
+})
