@@ -2,9 +2,8 @@
 Description=Container Journald Log to GELF
 
 [Service]
-ExecStart=/usr/local/bin/cj2gelf -s xxx.xxx.xxx.xxx -p 12201 -t
-Restart=on-failure
-RestartSec=30
+ExecStart=/absolute/path/to/cj2gelf --gelfhost <host> --gelfport <port>
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
